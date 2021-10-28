@@ -21,45 +21,45 @@ line_mountains_land=[(0,448),(28,437),(58,433),(77,433),(128,425),(316,424),(323
 polygon(screen,(180,180,180),line_mountains_land+line_sky_mountains[::-1])
 lines(screen,(28,27,32),False,line_mountains_land,1)
 
-##хер знает что
-#   size-размер хер знает чего;   orientation-(False;право)(True;лево)
+##штука
+#   size-размер штуки;   orientation-(False;право)(True;лево)
 def her_znaet_chto(x,y,size,orientation):
-    her_znaet_chto_surface = pygame.Surface((160*size, 255*size), pygame.SRCALPHA)
-    # грудак
-    ellipse(her_znaet_chto_surface,(255,255,255),(0,115*size,135*size,55*size))
+    shtyka_surface = pygame.Surface((160*size, 255*size), pygame.SRCALPHA)
+    # грудь
+    ellipse(shtyka_surface,(255,255,255),(0,115*size,135*size,55*size))
     # шея
-    ellipse(her_znaet_chto_surface, (255, 255, 255),(105*size,35*size,40*size,100*size))
-    #башка
-    ellipse(her_znaet_chto_surface, (255, 255, 255), (110*size,10*size,50*size,30*size))
-    #уши
-    polygon(her_znaet_chto_surface, (255,255,255),[(116*size,16*size),(111*size,10*size),(109*size,0),
+    ellipse(shtyka_surface, (255, 255, 255),(105*size,35*size,40*size,100*size))
+    #голова
+    ellipse(shtyka_surface, (255, 255, 255), (110*size,10*size,50*size,30*size))
+    # ушки
+    polygon(shtyka_surface, (255,255,255),[(116*size,16*size),(111*size,10*size),(109*size,0),
                                                          (114*size,8*size),(121*size,15*size)])
 
-    polygon(her_znaet_chto_surface, (255, 255, 255),[(115*size,18*size),(105*size,12*size),(102*size,9*size),
+    polygon(shtyka_surface, (255, 255, 255),[(115*size,18*size),(105*size,12*size),(102*size,9*size),
               (99*size,size),(101*size,11*size),(105*size,17*size),(111*size,25*size)])
 
     #ГЛАЗ
     #глазное яблоко
-    ellipse(her_znaet_chto_surface, (230, 129, 255), (120*size,15*size,25*size,19*size))
+    ellipse(shtyka_surface, (230, 129, 255), (120*size,15*size,25*size,19*size))
     #зрачёк
-    ellipse(her_znaet_chto_surface, (0, 0, 0), (135*size,20*size,8*size,8*size))
+    ellipse(shtyka_surface, (0, 0, 0), (135*size,20*size,8*size,8*size))
     #блик на глазу
     blic = pygame.Surface((12*size, 4*size), pygame.SRCALPHA)
     ellipse(blic, (255, 255, 255), (0, 0, 12*size, 4*size))
     povernuli_blic = pygame.transform.rotate(blic, 330)
-    her_znaet_chto_surface.blit(povernuli_blic, (125*size, 15*size))
+    shtyka_surface.blit(povernuli_blic, (125*size, 15*size))
 
 
-    #НОГИ  ляхи i[0];  икры i[1];   ступни i[2]
+    #НОГИ  ляшки i[0];  икры i[1];   ступни i[2]
     for i in [[(20,50),(8,140),(35,160),(85,140),(103,160)],[(20,40),(8,181),(35,202),(85,181),(103,202)],[(20,14),(11,220),(38,240),(90,220),(107,240)]]:
         for j in i[1:5]:
-            ellipse(her_znaet_chto_surface, (255, 255, 255), (j[0]*size, j[1]*size, i[0][0]*size, i[0][1]*size))
+            ellipse(shtyka_surface, (255, 255, 255), (j[0]*size, j[1]*size, i[0][0]*size, i[0][1]*size))
 
-    her_znaet_chto_surface=pygame.transform.flip(her_znaet_chto_surface,orientation,False)
-    screen.blit(her_znaet_chto_surface,(x,y))
+   shtyka_surface=pygame.transform.flip(shtyka_surface,orientation,False)
+    screen.blit(shtyka_surface,(x,y))
 
 
-#   size-размер хер знает чего;   orientation-(False;право)(True;лево)
+#   size-размер штуки;   orientation-(False;право)(True;лево)
 def poljana_s_jajcami(x,y,size,orientation):
     # поляна
     poljana = pygame.Surface((230*size, 230*size), pygame.SRCALPHA)
